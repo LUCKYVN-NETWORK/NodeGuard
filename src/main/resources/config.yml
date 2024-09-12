@@ -1,0 +1,53 @@
+# Main components for the notification center for Discord
+discord:
+  # The webhook URL for sending in notifications
+  webhook: ''
+  # What roles should we ping when the server is lagging?
+  ping-role:
+    - '1281941596564230175'
+
+# Main components for NodeGuard - Just tweak it to your liking :3
+node:
+
+  # Should we enable debug mode ? This is for testing purposes mostly :3
+  debug: false
+
+  # What is the server name? This will be displayed in the warning embed
+  server-name: 'MINECRAFT_SERVER'
+
+  # TPS monitoring - Will notify when TPS drops below a certain threshold.
+  tps-monitor:
+    # Threshold for activation
+    threshold: 15.0
+    # Cooldown to avoid notification spamming (in milliseconds)
+    cooldown: 60000
+    # Interval between each TPS check (in milliseconds)
+    interval: 1000
+
+  # Main thread monitoring - Will notify when the server stops responding for a while
+  thread-monitor:
+    # Threshold for activation (in milliseconds)
+    threshold: 10000
+    # Cooldown to avoid notification spamming (in milliseconds)
+    cooldown: 60000
+    # Interval between each thread check (in milliseconds)
+    interval: 1000
+
+  # Ping monitoring - Will notify when server's average ping exceeds a certain value
+  ping-monitor:
+    # Threshold for activation
+    threshold: 120
+    # Cooldown to avoid notification spamming (in milliseconds)
+    cooldown: 60000
+    # Interval between each ping check (in milliseconds)
+    interval: 10000
+
+  # RAM monitoring - Will notify when server's RAM usage exceeds a certain value!
+  ram-monitor:
+    # Threshold for activation (%)
+    threshold: 80.0
+    # Cooldown to avoid notification spamming (in milliseconds)
+    cooldown: 60000
+    # Interval between each RAM check (in milliseconds)
+    interval: 1000
+

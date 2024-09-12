@@ -1,0 +1,6 @@
+name: NodeGuard
+version: '1.0-b01'
+main: me.stella.NodeGuard
+author: StellarSeal_
+api-version: '1.13'
+description: Asynchronous server monitoring for LuckyVN
