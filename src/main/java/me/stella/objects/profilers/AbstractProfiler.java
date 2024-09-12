@@ -70,7 +70,7 @@ public abstract class AbstractProfiler {
                     baseWebhookObj.put("content", contentBuilder.toString());
                     baseWebhookObj.put("tts", false);
                     JSONArray embeds = new JSONArray();
-                    embeds.add(buildWarningEmbed());
+                    embeds.add(buildWarningEmbed().getJSONMapping());
                     baseWebhookObj.put("embeds", embeds);
                     WebhookService.sendWebhook(webhook, baseWebhookObj);
                     setCD(System.currentTimeMillis() + getCooldown());

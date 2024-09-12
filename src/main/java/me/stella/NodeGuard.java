@@ -67,8 +67,6 @@ public final class NodeGuard extends JavaPlugin {
                     contentBuilder.append("Máy chủ **" + server + "** đã bắt đầu mở chế độ theo dõi!");
                     baseWebhookObj.put("content", contentBuilder.toString());
                     baseWebhookObj.put("tts", false);
-                    JSONArray embeds = new JSONArray();
-                    baseWebhookObj.put("embeds", embeds);
                     WebhookService.sendWebhook(webhook, baseWebhookObj);
                 }).get();
             } catch(Throwable t) { t.printStackTrace(); }
@@ -91,8 +89,6 @@ public final class NodeGuard extends JavaPlugin {
                     contentBuilder.append("Máy chủ **" + server + "** đã tắt theo dõi!");
                     baseWebhookObj.put("content", contentBuilder.toString());
                     baseWebhookObj.put("tts", false);
-                    JSONArray embeds = new JSONArray();
-                    baseWebhookObj.put("embeds", embeds);
                     WebhookService.sendWebhook(webhook, baseWebhookObj);
                 }).get();
                 Thread.sleep(2500L);
