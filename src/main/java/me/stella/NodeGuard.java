@@ -5,7 +5,6 @@ import me.stella.objects.AutoCloseJavaScheduler;
 import me.stella.objects.profilers.impl.*;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.text.NumberFormat;

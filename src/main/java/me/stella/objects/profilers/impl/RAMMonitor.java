@@ -13,13 +13,27 @@ import java.util.logging.Level;
 
 public class RAMMonitor extends AbstractProfiler {
 
+    private final List<Double> usageTable;
+
     public RAMMonitor(ConfigurationSection section) {
         super(section);
+        this.usageTable = new ArrayList<>();
+        for(int i = 0; i < 30; i++)
+            usageTable.add(0.0D);
+    }
+
+    private void popAndInject(double value) {
+        this.usageTable.remove(0);
+        this.usageTable.add(value);
     }
 
     @Override
     public boolean isExceedingThreshold() {
-        return getRAMUsage() >= getThreshold();
+        popAndInject(getRAMUsage());
+        double t = 0.0D;
+        for(int i = 0; i < 30; i++)
+            t += this.usageTable.get(i);
+        return (t / 30.0D) >= getThreshold();
     }
 
     private double getRAMUsage() {

@@ -1,5 +1,5 @@
 name: NodeGuard
-version: '1.0-b01'
+version: '1.0-b04'
 main: me.stella.NodeGuard
 author: StellarSeal_
 api-version: '1.13'

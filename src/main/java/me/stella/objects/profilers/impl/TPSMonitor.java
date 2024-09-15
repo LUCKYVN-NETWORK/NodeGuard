@@ -15,13 +15,27 @@ import java.util.logging.Level;
 
 public class TPSMonitor extends AbstractProfiler {
 
+    private final List<Double> usageTable;
+
     public TPSMonitor(ConfigurationSection section) {
         super(section);
+        this.usageTable = new ArrayList<>();
+        for(int i = 0; i < 30; i++)
+            usageTable.add(0.0D);
+    }
+
+    private void popAndInject(double value) {
+        this.usageTable.remove(0);
+        this.usageTable.add(value);
     }
 
     @Override
     public boolean isExceedingThreshold() {
-        return getTPS() <= getThreshold();
+        popAndInject(getTPS());
+        double t = 0.0D;
+        for(int i = 0; i < 30; i++)
+            t += this.usageTable.get(i);
+        return (t / 30.0D) <= getThreshold();
     }
 
     public double getTPS() {

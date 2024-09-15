@@ -20,7 +20,7 @@ node:
     # Threshold for activation
     threshold: 15.0
     # Cooldown to avoid notification spamming (in milliseconds)
-    cooldown: 60000
+    cooldown: 300000
     # Interval between each TPS check (in milliseconds)
     interval: 1000
 
@@ -29,16 +29,16 @@ node:
     # Threshold for activation (in milliseconds)
     threshold: 10000
     # Cooldown to avoid notification spamming (in milliseconds)
-    cooldown: 60000
+    cooldown: 300000
     # Interval between each thread check (in milliseconds)
     interval: 1000
 
   # Ping monitoring - Will notify when server's average ping exceeds a certain value
   ping-monitor:
     # Threshold for activation
-    threshold: 120
+    threshold: 768
     # Cooldown to avoid notification spamming (in milliseconds)
-    cooldown: 60000
+    cooldown: 300000
     # Interval between each ping check (in milliseconds)
     interval: 10000
 
@@ -47,7 +47,7 @@ node:
     # Threshold for activation (%)
     threshold: 80.0
     # Cooldown to avoid notification spamming (in milliseconds)
-    cooldown: 60000
+    cooldown: 300000
     # Interval between each RAM check (in milliseconds)
     interval: 1000
 
