@@ -1,5 +1,7 @@
 package me.stella.objects.profilers.impl;
 
+
+
 import com.google.common.util.concurrent.AtomicDouble;
 import me.stella.NodeGuard;
 import me.stella.discord.elements.EmbedWrapper;
@@ -37,7 +39,10 @@ public class PingMonitor extends AbstractProfiler {
         return 0;
     }
 
+    
     private double[] getAveragePing() {
+        if(Bukkit.getOnlinePlayers().size() < 10)
+          return new double[] { -1.0D, 0.0D };
         AtomicDouble maxPing = new AtomicDouble(-1.0D);
         AtomicDouble total = new AtomicDouble(0.0D);
         Bukkit.getOnlinePlayers().forEach(player -> {
