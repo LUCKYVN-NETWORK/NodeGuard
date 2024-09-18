@@ -21,7 +21,7 @@ public class TPSMonitor extends AbstractProfiler {
         super(section);
         this.usageTable = new ArrayList<>();
         for(int i = 0; i < 30; i++)
-            usageTable.add(0.0D);
+            usageTable.add(20.0D);
     }
 
     private void popAndInject(double value) {
